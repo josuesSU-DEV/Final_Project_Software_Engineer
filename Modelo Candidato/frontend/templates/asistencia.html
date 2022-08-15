@@ -1,0 +1,97 @@
+<head>
+  <link rel="stylesheet" href= 
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+          
+      <script src= 
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+      </script> 
+          
+      <script src= 
+  "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> 
+      </script> 
+          
+      <script src= 
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> 
+      </script> 
+
+      <script>
+        function myFunction() {
+          navigator.mediaDevices.getUserMedia({video: true}).then((stream)=>{
+          console.log(stream)
+          let video = document.getElementById('video')
+          video.srcObject = stream
+            
+          video.onloadedmetadata = (ev) => video.play()
+            
+          }).catch((err)=>console.log(err))
+            
+        }
+      </script>
+        
+      <style type="text/css">
+          .xyz {
+              background-size: auto;
+              text-align: center;
+              padding-top: 100px;
+          }
+          .btn-circle.btn-sm {
+              width: 30px;
+              height: 30px;
+              padding: 6px 0px;
+              border-radius: 15px;
+              font-size: 8px;
+              text-align: center;
+          }
+          .btn-circle.btn-md {
+              width: 50px;
+              height: 50px;
+              padding: 7px 10px;
+              border-radius: 25px;
+              font-size: 10px;
+              text-align: center;
+          }
+          .btn-circle.btn-xl {
+              width: 350px;
+              height: 350px;
+              padding: 10px 16px;
+              border-radius: 300px;
+              font-size: 38px;
+              text-align: center;
+          }
+      </style>
+  </head>
+  <link rel="stylesheet" type = "text/css" href = "../static/style2.css">
+  <div class="form_wrapper">
+      <div class="form_container">
+        <div class="title_container">
+          <h2>Asistencia de curso en el horario de hh/mm</h2>
+        </div>
+        <div class="row clearfix">
+          <div class="">
+            <form>
+              <div class="circle">
+                  <video src="" id="video"></video>
+                  <button type="button" class="btn btn-success btn-circle btn-xl" onclick="myFunction()">Registrar asistencia usando camara frontal</button> 
+              </div>
+  
+                <div class="input_field checkbox_option">
+                    <input type="checkbox" id="cb1">
+                    <label for="cb1">Asistencia inicio</label>
+                </div>
+                <div class="input_field checkbox_option">
+                    <input type="checkbox" id="cb2">
+                    <label for="cb2">Asistencia aleatoria 1</label>
+                </div>
+              <div class="input_field checkbox_option">
+                    <input type="checkbox" id="cb3">
+                    <label for="cb2">Asistencia aleatoria 2</label>
+                </div>
+              <div class="input_field checkbox_option">
+                    <input type="checkbox" id="cb4">
+                    <label for="cb2">Asistencia aleatoria 3</label>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
