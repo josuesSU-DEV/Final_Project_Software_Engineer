@@ -1,21 +1,32 @@
 create database TIF;
 use TIF;
+
+/*
+drop table ponente;
+drop table asistente;
+drop table usuario;
+drop table lista;
+drop table evento;
+drop table asiste;
+drop table listevento;
+*/
+
 create table Usuario(
-	id integer primary key,
+	idUsuario integer primary key,
     nombre varchar(30),
     apellido varchar(30),
     correo varchar(30) unique
 );
 
 create table Asistente(
-	id integer primary key,
-    foreign key (id) references Usuario(id)
+	idAsistente integer primary key,
+    foreign key (idAsistente) references Usuario(idUsuario)
 );
 
 create table Ponente(
-	id integer primary key,
+	idPonente integer primary key,
 	numEvento integer,
-    foreign key (id) references Usuario(id)
+    foreign key (idPonente) references Usuario(idUsuario)
 );
 
 create table Lista(
@@ -37,7 +48,7 @@ create table Evento(
     detalles varchar(100),
     link varchar(30),
     primary key(idEvento,idPonente,idLista),
-    foreign key (idPonente) references Ponente(id),
+    foreign key (idPonente) references Ponente(idPonente),
     foreign key (idLista) references Lista(idLista)
 );
 
@@ -45,8 +56,134 @@ create table Asiste(
 	idAsistente integer,
     idEvento integer,
     primary key (idAsistente,idEvento),
-    foreign key (idAsistente) references Asistente(id),
+    foreign key (idAsistente) references Asistente(idAsistente),
     foreign key (idEvento) references Evento(idEvento)
 );
 
+show tables;
+
+drop procedure insertarPonente;
+Delimiter $$
+create procedure insertarPonente(
+in id integer,
+in nombre varchar(30),
+in apellido varchar(30),
+in correo varchar(30),
+in numEvento integer)
+begin
+	if (select exists (select 1 from ponente where ponente.idPonente = id))then
+		select 'Ponente ya existe!';
+    else
+		if (select exists (select 1 from usuario where usuario.idUsuario = id))then
+			insert into ponente values(id,numEvento);
+		else
+			insert into usuario values(id,nombre,apellido,correo);
+			insert into ponente values(id,numEvento);
+		end if;
+	end if;
+end$$
+Delimiter ;
+
+drop procedure insertarAsistente;
+Delimiter $$
+create procedure insertarAsistente(
+in id integer,
+in nombre varchar(30),
+in apellido varchar(30),
+in correo varchar(30))
+begin
+	if (select exists (select 1 from asistente where asistente.idAsistente = id))then
+		select 'Asistente ya existe!';
+    else
+		if (select exists (select 1 from usuario where usuario.idUsuario = id))then
+			insert into asistente values(id);
+		else
+			insert into usuario values(id,nombre,apellido,correo);
+			insert into asistente values(id);
+		end if;
+	end if;
+end$$
+Delimiter ;
+
+drop procedure listaEvento;
+Delimiter $$
+create procedure listaEvento(
+in id integer,
+in cantidad integer)
+begin
+	if (select exists (select 1 from lista where lista.idLista = id))then
+    select 'Lista ya existe!';
+    else 
+		insert into lista values(id,cantidad);
+	end if;
+end$$
+Delimiter ;
+
+drop procedure insertarEvento;
+Delimiter $$
+create procedure insertarEvento(
+in id integer,
+in idPonente integer,
+in idLista integer,
+in nombre varchar(30),
+in detalles varchar(100),
+in link varchar(30))
+begin
+	if (select exists (select 1 from evento where evento.idEvento = id))then
+    select 'Evento ya existe ya existe!';
+    else 
+		insert into evento values(id,idPonente,idLista,nombre,detalles,link);
+	end if;
+end$$
+Delimiter ;
+
+drop procedure asiste;
+Delimiter $$
+create procedure asiste(
+in idAsistente integer,
+in idEvento integer)
+begin
+	if (select exists (select 1 from evento where evento.idEvento = idEvento))then
+		if(select exists (select 1 from asistente where asistente.idAsistente = idAsistente))then
+			insert into asiste values(idAsistente,idEvento);
+		end if;
+    else 
+		select 'No existe evento o usuario(asistente)!';
+	end if;
+end$$
+Delimiter ;
+
+/*Insertar Ponente*/
+call insertarPonente(1,"Josue","Sumare","JosueS@gmail.com",1);
+call insertarPonente(2,"Moises","Casaverde","MoisesC@gmail.com",2);
+call insertarPonente(3,"Levi","Castillon","LeviC@gmail.com",3);
+call insertarPonente(4,"Samuel","Chambi","SamuelC@gmail.com",4);
+
+/*Insertar Asistentes*/
+call insertarAsistente(4,"Samuel","Chambi","SamuelC@gmail.com");
+call insertarAsistente(5,"Alejandro","Villa","AlejandroV@gmail.com");
+call insertarAsistente(6,"Julio","Yauri","JulioY@gmail.com");
+
+
+/*Insertar lista Evento*/
+call listaEvento(1,150);
+call listaEvento(2,150);
+call listaEvento(3,150);
+insert into listevento values(1,"Biologia");
+insert into listevento values(2,"Ciencia");
+insert into listevento values(3,"Psicologia");
+
+/*Insertar Evento*/
+call insertarEvento(1,1,1,"Biologia","seres vivos","https//:Bilogia.com");
+call insertarEvento(2,2,2,"Ciencia","tecnologia","https//:Ciencia.com");
+call insertarEvento(3,3,3,"Psicologia","el comportamiento humano","https//:Psicologia.com");
+
+/*Insertar si un asistente asiste a un evento*/
+call asiste(4,1);
+call asiste(5,2);
+call asiste(6,3);
+
+select * from asistente;
+select * from ponente;
+select * from usuario;
 
