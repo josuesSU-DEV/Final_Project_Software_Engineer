@@ -1,4 +1,4 @@
-class Evento:
+class EventoModel:
     def __init__(self, id, id_ponente, nombre, detalles, link):
         self.id = id
         self.id_ponente = id_ponente

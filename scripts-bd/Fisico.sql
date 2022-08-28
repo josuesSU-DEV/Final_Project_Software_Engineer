@@ -70,7 +70,8 @@ in id integer,
 in nombre varchar(30),
 in apellido varchar(30),
 in correo varchar(30),
-in numEvento integer)
+in numEvento integer,
+in descripcion varchar(100))
 begin
 	if (select exists (select 1 from ponente where ponente.idPonente = id))then
 		select 'Ponente ya existe!';
@@ -79,7 +80,7 @@ begin
 			insert into ponente values(id,numEvento);
 		else
 			insert into usuario values(id,nombre,apellido,correo);
-			insert into ponente values(id,numEvento);
+			insert into ponente values(id,numEvento,descripcion);
 		end if;
 	end if;
 end$$
@@ -155,10 +156,10 @@ end$$
 Delimiter ;
 
 /*Insertar Ponente*/
-call insertarPonente(1,"Josue","Sumare","JosueS@gmail.com",1);
-call insertarPonente(2,"Moises","Casaverde","MoisesC@gmail.com",2);
-call insertarPonente(3,"Levi","Castillon","LeviC@gmail.com",3);
-call insertarPonente(4,"Samuel","Chambi","SamuelC@gmail.com",4);
+call insertarPonente(1,"Josue","Sumare","JosueS@gmail.com",1,'pipipipipipipipipi');
+call insertarPonente(2,"Moises","Casaverde","MoisesC@gmail.com",2,'pipipipipipipipipi');
+call insertarPonente(3,"Levi","Castillon","LeviC@gmail.com",3,'pipipipipipipipipi');
+call insertarPonente(4,"Samuel","Chambi","SamuelC@gmail.com",4,"pipipipipipipipipi");
 
 /*Insertar Asistentes*/
 call insertarAsistente(4,"Samuel","Chambi","SamuelC@gmail.com");

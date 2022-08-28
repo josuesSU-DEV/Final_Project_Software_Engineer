@@ -5,7 +5,7 @@ from flask import jsonify
 from flask_cors import cross_origin # para que no genere errores de CORS al hacer peticiones
 
 from backend.models.ponente import PonenteModel
-from backend.infrastracture.ponente_repository import PonenteRepository
+from backend.infrastructure.ponente_repository import PonenteRepository
 
 ponente_blueprint = Blueprint('ponente_blueprint', __name__)
 
