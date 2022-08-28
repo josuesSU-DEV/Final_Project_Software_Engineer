@@ -1,6 +1,6 @@
 from backend.infrastructure.connection_pool import MySQLPool
 
-from backend.models.evento import EventoModel
+# from backend.models.evento import EventoModel
 
 # Clase Repositorio para la lectura y manipulacion en la BD
 class EventoRepository:
@@ -27,9 +27,7 @@ class EventoRepository:
         data = []
         content = {}
         for result in rv:
-            # evento = EventoModel(result[0], result[1], result[2], result[3], result[4], result[5])
             content = {'id': result[0], 'id_ponente': result[1], 'id_lista': result[2], 'nombre': result[3], 'detalles': result[4], 'link': result[5]}
-            # data.append(evento)
             data.append(content)
             content = {}
         return data

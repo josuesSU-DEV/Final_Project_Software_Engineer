@@ -27,10 +27,14 @@ cors = CORS(app)
 @app.route('/', methods=['GET'])
 def Index():
     response = requests.post("http://127.0.0.1:5000/api/evento/get_all").json() # Testing API
+    eventos = []
+    for result in response:
+        evento = EventoModel(response[0]['id'], response[0]['id_ponente'], response[0]['id_lista'], response[0]['nombre'], response[0]['detalles'], response[0]['link'])
+        eventos.append(evento)
     # evento = EventoModel(response[0].get_id(), response[0].get_id_ponente(), response[0].get_nombre(), response[0].get_detalles(), response[0].get_link())
-    # print(evento.get_nombre())
+    print(eventos[0].get_nombre())
     # print(response[0].get_detalles())
-    print(response[0]['detalles'])
+    # print(response[0]['detalles'])
     return render_template('evento.html')
 
 # @app.route('/evento', methods=['GET'])
