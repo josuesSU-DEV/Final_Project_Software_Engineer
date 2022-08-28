@@ -26,6 +26,7 @@ create table Asistente(
 create table Ponente(
 	idPonente integer primary key,
 	numEvento integer,
+	descripcion varchar(100),
     foreign key (idPonente) references Usuario(idUsuario)
 );
 
@@ -45,7 +46,7 @@ create table Evento(
     idPonente integer,
     idLista integer,
     nombre varchar(30),
-    detalles varchar(100),
+    detalles varchar(200),
     link varchar(30),
     primary key(idEvento,idPonente,idLista),
     foreign key (idPonente) references Ponente(idPonente),
