@@ -54,6 +54,7 @@ create table Evento(
     nombre varchar(30),
     detalles varchar(200),
     link varchar(30),
+	idTema integer,
     primary key(idEvento,idPonente,idLista),
     foreign key (idPonente) references Ponente(idPonente),
     foreign key (idLista) references Lista(idLista)

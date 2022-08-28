@@ -28,12 +28,14 @@ def Index():
 @app.route('/login', methods=['GET','POST'])
 def Login():
     #if request.method == 'POST':
-
     return render_template('login.html')
+
+@app.route('/registro', methods=['GET'])
+def Registro():
+    return render_template('registrar.html')
 
 @app.route('/evento', methods=['GET'])
 def Evento():
-    
     return render_template('evento.html')
 
 @app.route('/profile', methods=['GET'])

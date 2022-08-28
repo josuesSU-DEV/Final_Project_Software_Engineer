@@ -1,8 +1,9 @@
 from backend.infrastructure.connection_pool import MySQLPool
+from backend.infrastructure.ponente_repository import PonenteRepository
 
+repo_ponente = PonenteRepository()
 # Clase Repositorio para la lectura y manipulacion en la BD
 class EventoRepository:
-    
     # Estableciendo conexion con la BD a traves de un atributo de pool
     def __init__(self):
         self.mysql_pool = MySQLPool()
@@ -10,11 +11,15 @@ class EventoRepository:
     # Obtener un evento por id
     def get(self, id):
         params = {'id': id}
-        rv = self.mysql_pool.execute("select * from evento where evento.idEvento = %(id)s", params)                
+        rv = self.mysql_pool.execute("select * from evento where evento.idEvento = %(id)s", params)
+
+        # Obteniendo informacion del ponente
+        ponente = repo_ponente.get(rv[0][1])
+        
         data = []
         content = {}
         for result in rv:
-            content = {'id': result[0], 'id_ponente': result[1], 'nombre': result[2], 'detalles': result[3], 'link': result[4]}
+            content = {'id': result[0], 'ponente': ponente[0], 'idLista' : result[2], 'nombre': result[3], 'detalles': result[4], 'link': result[5]}
             data.append(content)
             content = {}
         return data
@@ -25,7 +30,9 @@ class EventoRepository:
         data = []
         content = {}
         for result in rv:
-            content = {'id': result[0], 'id_ponente': result[1], 'id_lista': result[2], 'nombre': result[3], 'detalles': result[4], 'link': result[5]}
+
+            ponente = repo_ponente.get(result[1])
+            content = {'id': result[0], 'ponente': ponente[0], 'idLista': result[2], 'nombre': result[3], 'detalles': result[4], 'link': result[5]}
             data.append(content)
             content = {}
         return data
