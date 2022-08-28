@@ -20,7 +20,7 @@ cors = CORS(app)
 
 @app.route('/', methods=['GET'])
 def Index():
-    response = requests.post("http://127.0.0.1:5000/evento/get_all").json() # Testing API
+    response = requests.post("http://127.0.0.1:5000/api/evento/get_all").json() # Testing API
     print(response[0]['detalles'])
     return render_template('evento.html')
 

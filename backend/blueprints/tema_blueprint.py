@@ -11,25 +11,25 @@ tema_blueprint = Blueprint('tema_blueprint', __name__)
 
 repo = TemaRepository()
 
-@tema_blueprint.route('/tema/create', methods=['POST']) # Verificar si se encuentra en la base de datos
+@tema_blueprint.route('/api/tema/create', methods=['POST']) # Verificar si se encuentra en la base de datos
 @cross_origin()
 def create_tema():
     content = repo.create(int(request.json['id']), request.json['nombre'])    
     return jsonify(content)
 
-@tema_blueprint.route('/tema/get', methods=['POST']) # Verificar si se encuentra en la base de datos
+@tema_blueprint.route('/api/tema/get', methods=['POST']) # Verificar si se encuentra en la base de datos
 @cross_origin()
 def get_tema():
     content = repo.get(int(request.json['id']))    
     return jsonify(content)
 
-@tema_blueprint.route('/tema/get_all', methods=['POST']) # Verificar si se encuentra en la base de datos
+@tema_blueprint.route('/api/tema/get_all', methods=['POST']) # Verificar si se encuentra en la base de datos
 @cross_origin()
 def get_all_tema():
     content = repo.get_all() 
     return jsonify(content)
 
-@tema_blueprint.route('/tema/delete', methods=['POST']) # Verificar si se encuentra en la base de datos
+@tema_blueprint.route('/api/tema/delete', methods=['POST']) # Verificar si se encuentra en la base de datos
 @cross_origin()
 def delete_tema():
     content = repo.delete(int(request.json['id']))    

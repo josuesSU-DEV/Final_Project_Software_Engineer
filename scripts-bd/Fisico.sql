@@ -1,3 +1,4 @@
+drop database if exists TIF;
 create database TIF;
 use TIF;
 
@@ -5,7 +6,7 @@ use TIF;
 drop table ponente;
 drop table asistente;
 drop table usuario;
-drop table lista;
+drop table lista;	
 drop table evento;
 drop table asiste;
 drop table listevento;
@@ -29,6 +30,11 @@ create table Ponente(
 	descripcion varchar(100),
     foreign key (idPonente) references Usuario(idUsuario)
 );
+
+create table Tema(
+	idTema integer primary key,
+	nombre varchar(30)
+)
 
 create table Lista(
 	idLista integer primary key,
@@ -63,7 +69,7 @@ create table Asiste(
 
 show tables;
 
-drop procedure insertarPonente;
+drop procedure if exists insertarPonente;
 Delimiter $$
 create procedure insertarPonente(
 in id integer,
@@ -86,7 +92,7 @@ begin
 end$$
 Delimiter ;
 
-drop procedure insertarAsistente;
+drop procedure if exists insertarAsistente;
 Delimiter $$
 create procedure insertarAsistente(
 in id integer,
@@ -107,7 +113,7 @@ begin
 end$$
 Delimiter ;
 
-drop procedure listaEvento;
+drop procedure if exists listaEvento;
 Delimiter $$
 create procedure listaEvento(
 in id integer,
@@ -121,7 +127,7 @@ begin
 end$$
 Delimiter ;
 
-drop procedure insertarEvento;
+drop procedure if exists insertarEvento;
 Delimiter $$
 create procedure insertarEvento(
 in id integer,
@@ -139,7 +145,7 @@ begin
 end$$
 Delimiter ;
 
-drop procedure asiste;
+drop procedure if exists asiste;
 Delimiter $$
 create procedure asiste(
 in idAsistente integer,

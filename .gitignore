@@ -1,2 +1,2 @@
-/backend/models/connection_pool.py
+/backend/infrastructure/connection_pool.py
 /.vscode
