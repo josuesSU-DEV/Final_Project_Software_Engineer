@@ -27,7 +27,7 @@ cors = CORS(app)
 def Index():
     #response = requests.post("http://127.0.0.1:5000/api/evento/get_all").json() # Testing API
     #print(response[0]['detalles'])
-    return render_template('registrar.html')
+    return render_template('home.html')
 
 
 @app.route('/login', methods=['GET','POST'])
