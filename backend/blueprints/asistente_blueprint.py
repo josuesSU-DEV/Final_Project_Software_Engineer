@@ -23,7 +23,7 @@ def get_asistente():
     content = repo.get(int(request.json['id']))    
     return jsonify(content)
 
-@asistente_blueprint.route('/api/asistente/create', methods=['POST']) # Verificar si se encuentra en la base de datos
+@asistente_blueprint.route('/api/asistente/get_all', methods=['POST']) # Verificar si se encuentra en la base de datos
 @cross_origin()
 def get_all_asistente():
     content = repo.get_all() 

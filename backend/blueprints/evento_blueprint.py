@@ -4,8 +4,10 @@ from flask import jsonify
 
 from flask_cors import cross_origin # para que no genere errores de CORS al hacer peticiones
 
-from backend.models.evento import EventoModel
 from backend.infrastructure.evento_repository import EventoRepository
+
+from backend.models.evento import EventoModel
+
 
 evento_blueprint = Blueprint('evento_blueprint', __name__)
 
