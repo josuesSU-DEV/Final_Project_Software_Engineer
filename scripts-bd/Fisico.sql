@@ -34,7 +34,7 @@ create table Ponente(
 create table Tema(
 	idTema integer primary key,
 	nombre varchar(30)
-)
+);
 
 create table Lista(
 	idLista integer primary key,
@@ -136,12 +136,13 @@ in idPonente integer,
 in idLista integer,
 in nombre varchar(30),
 in detalles varchar(100),
-in link varchar(30))
+in link varchar(30),
+in idTema integer)
 begin
 	if (select exists (select 1 from evento where evento.idEvento = id))then
     select 'Evento ya existe ya existe!';
     else 
-		insert into evento values(id,idPonente,idLista,nombre,detalles,link);
+		insert into evento values(id,idPonente,idLista,nombre,detalles,link,idTema);
 	end if;
 end$$
 Delimiter ;
@@ -183,9 +184,9 @@ insert into listevento values(2,"Ciencia");
 insert into listevento values(3,"Psicologia");
 
 /*Insertar Evento*/
-call insertarEvento(1,1,1,"Biologia","seres vivos","https//:Bilogia.com");
-call insertarEvento(2,2,2,"Ciencia","tecnologia","https//:Ciencia.com");
-call insertarEvento(3,3,3,"Psicologia","el comportamiento humano","https//:Psicologia.com");
+call insertarEvento(1,1,1,"Biologia","seres vivos","https//:Bilogia.com",1);
+call insertarEvento(2,2,2,"Ciencia","tecnologia","https//:Ciencia.com",2);
+call insertarEvento(3,3,3,"Psicologia","el comportamiento humano","https//:Psicologia.com",3);
 
 /*Insertar si un asistente asiste a un evento*/
 call asiste(4,1);

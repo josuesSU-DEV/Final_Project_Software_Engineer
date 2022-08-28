@@ -11,19 +11,18 @@ class EventoRepository:
     # Obtener un evento por id
     def get(self, id):
         params = {'id': id}
-        rv = self.mysql_pool.execute("select * from evento where evento.idEvento = %(id)s", params)
+        rv = self.mysql_pool.execute("select * from evento WHERE evento.idEvento = %(id)s", params)
 
         # Obteniendo informacion del ponente
         ponente = repo_ponente.get(rv[0][1])
-    
-        rv = self.mysql_pool.execute("SELECT * FROM evento WHERE evento.idEvento = %(id)s", params)         
+          
         data = []
         content = {}
         for result in rv:
             content = {'id': result[0], 'ponente': ponente[0], 'idLista' : result[2], 'nombre': result[3], 'detalles': result[4], 'link': result[5]}
             data.append(content)
             content = {}
-        return data
+        return data[0]
 
     # Obtener todos los eventos
     def get_all(self):
