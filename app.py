@@ -29,17 +29,11 @@ def Index():
     response = requests.post("http://127.0.0.1:5000/api/evento/get_all").json() # Testing API
     eventos = []
     for result in response:
-        evento = EventoModel(response[0]['id'], response[0]['id_ponente'], response[0]['id_lista'], response[0]['nombre'], response[0]['detalles'], response[0]['link'])
+        evento = EventoModel(result['id'], result['id_ponente'], result['id_lista'], result['nombre'], result['detalles'], result['link'])
         eventos.append(evento)
-    # evento = EventoModel(response[0].get_id(), response[0].get_id_ponente(), response[0].get_nombre(), response[0].get_detalles(), response[0].get_link())
-    print(eventos[0].get_nombre())
-    # print(response[0].get_detalles())
+    print(eventos[1].get_detalles())
     # print(response[0]['detalles'])
     return render_template('evento.html')
-
-# @app.route('/evento', methods=['GET'])
-# def evento():
-#     response = request.post("").json()
 
 @app.route('/login', methods=['GET','POST'])
 def Login():
