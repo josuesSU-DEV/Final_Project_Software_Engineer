@@ -15,7 +15,8 @@ class EventoRepository:
 
         # Obteniendo informacion del ponente
         ponente = repo_ponente.get(rv[0][1])
-        
+    
+        rv = self.mysql_pool.execute("SELECT * FROM evento WHERE evento.idEvento = %(id)s", params)         
         data = []
         content = {}
         for result in rv:
@@ -26,7 +27,7 @@ class EventoRepository:
 
     # Obtener todos los eventos
     def get_all(self):
-        rv = self.mysql_pool.execute("select * from Evento order by idEvento")
+        rv = self.mysql_pool.execute("SELECT * FROM Evento ORDER BY idEvento")
         data = []
         content = {}
         for result in rv:
@@ -54,7 +55,7 @@ class EventoRepository:
     # Borrar un evento por id
     def delete(self, id):
         params = {'id' : id}      
-        query = "delete from evento where id = %(id)s"    
+        query = "DELETE FROM evento WHERE id = %(id)s"    
         self.mysql_pool.execute(query, params, commit=True)   
         data = {'result': 1}
         return data
