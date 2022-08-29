@@ -140,11 +140,11 @@ La estructura y la denominación de los agregados, las clases y los métodos de 
 
 - Casaverde Aleman Moises Alejandro: Implementacion de API, llamadas a la misma, rutas, contenido de plantillas en jinja, creacion de varios blueprints e infraestructura
 - Castillon Urquiza Levi Joel:
-- Chambi Ytusaca Samuel Felipe Maximilianao: 
+- Chambi Ytusaca Samuel Felipe Maximiliano: Implementación de templates, diseño de archivo README.md e infraestructura DDD. 
 - Choquehuanca Anconeyra Roy Angel:
 - Pino Huarsaya Angie Alexandra:
 - Sumare Uscca Josue Gabriel:
-- Villa Herrera Alejandro Antonio:
+- Villa Herrera Alejandro Antonio: Implementacion de API, diseño de models, diseño Readme, modificacion de blueprints e infraestructura
 - Yauri Ituccayasi Julio Enrique: 
 
 
