@@ -136,5 +136,16 @@ Aqui se realizan tareas como determinar si un evento de manipulación debe ser r
 
 La estructura y la denominación de los agregados, las clases y los métodos de la capa deberían seguir el lenguaje del grupo, y cualquier miembro debería ser capaz de explicar a un experto en el dominio cómo funciona cierta parte del software dibujando unos cuantos diagramas sencillos y utilizando los nombres reales de las clases y los métodos del código fuente.
 
+## Esfuerzo de cada integrante (en orden alfabetico):
+
+- Casaverde Aleman Moises Alejandro: Implementacion de API, llamadas a la misma, creacion de varios blueprints e infraestructura
+- Castillon Urquiza Levi Joel:
+- Chambi Ytusaca Samuel Felipe Maximilianao: 
+- Choquehuanca Anconeyra Roy Angel:
+- Pino Huarsaya Angie Alexandra:
+- Sumare Uscca Josue Gabriel:
+- Villa Herrera Alejandro Antonio:
+- Yauri Ituccayasi Julio Enrique: 
+
 
 © Copyright 2022 All rights reserved
