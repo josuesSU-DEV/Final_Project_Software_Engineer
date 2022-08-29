@@ -150,7 +150,7 @@ La estructura y la denominación de los agregados, las clases y los métodos de 
 - Castillon Urquiza Levi Joel: Implementacion de API , creacion y modificacion de infraestructura.
 - Chambi Ytusaca Samuel Felipe Maximiliano: Implementacion de templates (Log In, Sign Up), diseño de README.md e infraestructura DDD. 
 - Choquehuanca Anconeyra Roy Angel: Creación de la base de datos, tanto modelo lógico, conceptual y fisico. Con procedimientos almacenados y ejemplos en cada tabla.
-- Pino Huarsaya Angie Alexandra:  Implementación de Templates (Sign Up, Inicio)
+- Pino Huarsaya Angie Alexandra:  Implementación de Templates (Registro, Inicio)
 - Sumare Uscca Josue Gabriel: Implementacion de la secuencia de acciones de la aplicación(fujo de acciones de todas las pantallas).
 - Villa Herrera Alejandro Antonio: Implementacion de API, diseño de models, diseño Readme, modificacion de blueprints e infraestructura
 - Yauri Ituccayasi Julio Enrique: Implementación de templates (Evento, Profile, Home) y diseño de README.md.
