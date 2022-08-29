@@ -32,7 +32,33 @@ def Index():
 
 @app.route('/login', methods=['GET','POST'])
 def Login():
-    #if request.method == 'POST':
+    if request.method == 'POST':
+        
+        correo = request.form['typeEmailX']
+        password = request.form['typePasswordX']
+        # curl = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        # curl.execute("SELECT * FROM usuario WHERE =%s",[correo])
+        # user = curl.fetchone()
+        users=requests.post("http://127.0.0.1:5000/api/ponente/get_all").json()
+        print(users)
+        user={}
+
+        for x in users:
+            if x['correo']==correo:
+                user=x
+                break
+        
+            
+
+        # curl.close()
+        if not user:
+            return "Not found"
+        elif password == user['nombre']:
+            session['correo'] = user['correo']
+            return  redirect(url_for('Index'))
+        else:
+            return redirect(url_for('Registro'))
+
     return render_template('login.html')
 
 @app.route('/registro', methods=['GET'])
