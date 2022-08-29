@@ -142,7 +142,7 @@ La estructura y la denominación de los agregados, las clases y los métodos de 
 - Castillon Urquiza Levi Joel:
 - Chambi Ytusaca Samuel Felipe Maximilianao: 
 - Choquehuanca Anconeyra Roy Angel:
-- Pino Huarsaya Angie Alexandra:
+- Pino Huarsaya Angie Alexandra:  Implementación de Templates (Sign Up, Inicio)
 - Sumare Uscca Josue Gabriel: Implementacion de la secuencia de acciones de la aplicación(fujo de acciones de todas las pantallas).
 - Villa Herrera Alejandro Antonio: Implementacion de API, diseño de models, diseño Readme, modificacion de blueprints e infraestructura
 - Yauri Ituccayasi Julio Enrique: 
