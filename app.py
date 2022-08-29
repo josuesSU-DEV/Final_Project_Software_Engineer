@@ -11,6 +11,7 @@ from backend.blueprints.evento_blueprint import evento_blueprint
 from backend.blueprints.ponente_blueprint import ponente_blueprint
 
 from backend.models.evento import EventoModel
+from backend.models.ponente import PonenteModel
 
 app = Flask(__name__,template_folder='frontend/templates',static_folder='frontend/static')
 
@@ -43,7 +44,8 @@ def Registro():
 def Evento(id):
     query = {"id" : id}
     resp = requests.post("http://127.0.0.1:5000/api/evento/get", json=query).json()
-    return render_template('evento.html', evento=resp)
+    evento = EventoModel(resp['id'], resp['ponente'], resp['id_lista'], resp['nombre'], resp['detalles'], resp['link'])
+    return render_template('evento.html', evento)
 
 @app.route('/profile/<int:id>', methods=['GET'])
 def Profile(id):

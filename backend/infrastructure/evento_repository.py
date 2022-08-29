@@ -11,7 +11,7 @@ class EventoRepository:
     # Obtener un evento por id
     def get(self, id):
         params = {'id': id}
-        rv = self.mysql_pool.execute("select * from evento WHERE evento.idEvento = %(id)s", params)
+        rv = self.mysql_pool.execute("SELECT * FROM evento WHERE evento.idEvento = %(id)s", params)
 
         # Obteniendo informacion del ponente
         ponente = repo_ponente.get(rv[0][1])
@@ -19,7 +19,14 @@ class EventoRepository:
         data = []
         content = {}
         for result in rv:
-            content = {'id': result[0], 'ponente': ponente[0], 'idLista' : result[2], 'nombre': result[3], 'detalles': result[4], 'link': result[5]}
+            content = {
+                'id': result[0], 
+                'ponente': ponente[0], 
+                'idLista' : result[2], 
+                'nombre': result[3], 
+                'detalles': result[4], 
+                'link': result[5]
+            }
             data.append(content)
             content = {}
         return data[0]
@@ -30,9 +37,15 @@ class EventoRepository:
         data = []
         content = {}
         for result in rv:
-
             ponente = repo_ponente.get(result[1])
-            content = {'id': result[0], 'ponente': ponente[0], 'idLista': result[2], 'nombre': result[3], 'detalles': result[4], 'link': result[5]}
+            content = {
+                'id': result[0], 
+                'ponente': ponente[0], 
+                'idLista': result[2], 
+                'nombre': result[3], 
+                'detalles': result[4], 
+                'link': result[5]
+            }
             data.append(content)
             content = {}
         return data
@@ -46,7 +59,7 @@ class EventoRepository:
             'detalles' : detalles,
             'link' : link
         }
-        query = "insert into evento(%(id)s, %(id_ponente)s, %(nombre)s, %(detalles)s, %(link)s)"
+        query = "INSERT INTO evento(%(id)s, %(id_ponente)s, %(nombre)s, %(detalles)s, %(link)s)"
         self.mysql_pool.execute(query, params, commit=True)
         data = {'result : 1'}
         return data

@@ -13,7 +13,12 @@ class AsistenteRepository:
         data = []
         content = {}
         for result in rv:
-            content = {'id': result[0], 'nombre': result[1], 'apellido': result[2], 'correo': result[3]}
+            content = {
+                'id': result[0], 
+                'nombre': result[1], 
+                'apellido': result[2], 
+                'correo': result[3]
+            }
             data.append(content)
             content = {}
         return data
@@ -24,7 +29,12 @@ class AsistenteRepository:
         data = []
         content = {}
         for result in rv:
-            content = {'id': result[0], 'nombre': result[1], 'apellido': result[2], 'correo': result[3]}
+            content = {
+                'id': result[0], 
+                'nombre': result[1], 
+                'apellido': result[2], 
+                'correo': result[3]
+            }
             data.append(content)
             content = {}
         return data
@@ -39,6 +49,7 @@ class AsistenteRepository:
         }
         # Necesario insertar primero en la tabla usuario
         # ya que tiene una llave foranea asociada
+        query = "INSERT INTO usuario(%(id)s, %(nombre)s, %(apellido)s, %(correo)s)"
         query = "insertarAsistente(%(id)s, %(nombre)s, %(apellido)s, %(correo)s)"
         self.mysql_pool.execute(query, params, commit=True)
         data = {'result : 1'}

@@ -10,7 +10,12 @@ class PonenteRepository:
         data = []
         content = {}
         for result in rv:
-            content = {'id': result[0], 'nombre': result[1], 'apellido': result[2], 'correo': result[3]}
+            content = {
+                'id': result[0], 
+                'nombre': result[1], 
+                'apellido': result[2], 
+                'correo': result[3]
+            }
             data.append(content)
             content = {}
         return data
@@ -20,7 +25,14 @@ class PonenteRepository:
         data = []
         content = {}
         for result in rv:
-            content = {'id': result[0], 'nombre': result[1], 'apellido': result[2], 'correo': result[3], 'numEventos': result[4], 'descripcion': result[5]}
+            content = {
+                'id': result[0], 
+                'nombre': result[1], 
+                'apellido': result[2], 
+                'correo': result[3], 
+                'numEventos': result[4], 
+                'descripcion': result[5]
+            }
             data.append(content)
             content = {}
         return data
