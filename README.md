@@ -59,7 +59,7 @@ Se utiliza un sistema consistente de nombramiento para las variables, en la que 
 
 ![alt text](Images/nombrado_.PNG "Title")
 
-Captura de pantalla del archivo backend/infrastructure/tema_repository.py
+Captura de pantalla del archivo backend/infrastructure/tema_blueprint.py
 
 ### Organizacion de Archivos y Carpetas
 Los archivos de la aplicacion estan organizados en las carpetas backend y frontend, en backend ira la parte relevante para la API y la conexion a la base de datos como la infraestructura, los modelos y blueprints o rutas de la aplicacion, el frontend contara con las plantillas que serviran para representar datos dinamicos obtenidos de la API, ademas se encuentran tambien los archivos estaticos (imagenes, codigo css o js)
