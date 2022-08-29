@@ -100,7 +100,7 @@ Captura de pantalla del archivo backend/models/evento
 ### Dependency Inversion (D)
 Si se realiza un cambio a una subclass, la clase superior no debe verse afectada por tal cambio, como podemos ver en las clases del modelo de Usuarios y Name, Usuario depende de Name, pero los cambios que se hagan a Usuario, no debera afectar el comportamiento de Name.
 
-![alt text](Images/dependencyinversion.PNG "Dependency Inversion")
+![alt text](Images/dependencyinversion_.PNG "Dependency Inversion")
 
 Captura de pantalla del archivo backend/models/usuario.py
 
