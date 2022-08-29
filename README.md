@@ -82,18 +82,18 @@ Cada archivo y clase presenta solo una funcionalidad, no mezcladas con otras. Po
 
 Diferencia entre Evento para su repositorio, modelo y blueprint
 
-![alt text](Images/single_responsibility.PNG)
+![alt text](Images/single_responsibility_.PNG)
 
-![alt text](Images/single_responsibility2.PNG)
+![alt text](Images/single_responsibility2_.PNG)
 
-![alt text](Images/single_responsibility3.PNG)
+![alt text](Images/single_responsibility3_.PNG)
 
 Capturas de pantalla de los archivos backend/models/evento.py, backend/infrastructure/evento_repository.py y backend/blueprints/evento_blueprint.py
 
 ### Open / Closed (O)
 Al usar modelos como una representacion de las entidades en los archivos de backend, se pueden anadir funcionalidades sin tener que modificar la base de datos.
 
-![alt text](Images/openclosed.PNG)
+![alt text](Images/openclosed_.PNG)
 
 Captura de pantalla del archivo backend/models/evento
 
