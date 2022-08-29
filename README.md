@@ -54,6 +54,14 @@ La indentacion es constante en los archivos .py (Y de todas maneras el lenguaje 
 
 Captura de pantalla del archivo backend/infrastructure/asistente_repository.py
 
+
+### Capitalize SQL Special Words
+Se utiliza en las palabras pertenecientes a SQL para identificar mejor nuestros parametros y columnas.
+![image](https://user-images.githubusercontent.com/82822546/187265809-fc97e851-f21e-4247-9229-70efe44d010b.png)
+
+![image](https://user-images.githubusercontent.com/82822546/187265926-90461871-5289-4936-8fd9-ab9b48043f10.png)
+
+Captura de pantalla del archivo backend/infrastructure/asistente_repository.py
 ### Sistema Consistente de Nombramiento
 Se utiliza un sistema consistente de nombramiento para las variables, en la que varias variables temporales se vuelven a usar para representar una misma logica. El codigo usado con python se viene desarrollando con snake_casing, este estilo  nombra a las variables siempre en minuscula y si se quieren representar espacios o separacion de palabras se utiliza un guin bajo _, solo existe la excepcion para las clases donde cada clase se escriba empezando por una mayuscula y si existe separacion de palabras se hace con una mayuscula.
 
@@ -128,15 +136,5 @@ Aqui se realizan tareas como determinar si un evento de manipulación debe ser r
 
 La estructura y la denominación de los agregados, las clases y los métodos de la capa deberían seguir el lenguaje del grupo, y cualquier miembro debería ser capaz de explicar a un experto en el dominio cómo funciona cierta parte del software dibujando unos cuantos diagramas sencillos y utilizando los nombres reales de las clases y los métodos del código fuente.
 
-## Esfuerzo de cada integrante (en orden alfabetico):
-
-- Casaverde Aleman Moises Alejandro:
-- Castillon Urquiza Levi Joel:
-- Chambi Ytusaca Samuel Felipe Maximilianao: 
-- Choquehuanca Anconeyra Roy Angel:
-- Pino Huarsaya Angie Alexandra:
-- Sumare Uscca Josue Gabriel:
-- Villa Herrera Alejandro Antonio:
-- Yauri Ituccayasi Julio Enrique: 
 
 © Copyright 2022 All rights reserved
