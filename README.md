@@ -139,7 +139,7 @@ La estructura y la denominación de los agregados, las clases y los métodos de 
 ## Esfuerzo de cada integrante (en orden alfabetico):
 
 - Casaverde Aleman Moises Alejandro: Implementacion de API, llamadas a la misma, rutas, contenido de plantillas en jinja, creacion de varios blueprints e infraestructura
-- Castillon Urquiza Levi Joel:
+- Castillon Urquiza Levi Joel: Implementacion de API , diseño y modificacion de infraestructura.
 - Chambi Ytusaca Samuel Felipe Maximiliano: Implementación de templates, diseño de archivo README.md e infraestructura DDD. 
 - Choquehuanca Anconeyra Roy Angel:
 - Pino Huarsaya Angie Alexandra:
