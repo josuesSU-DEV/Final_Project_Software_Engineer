@@ -6,7 +6,7 @@ Debido a los grandes avances y nuevas tecnologias relevantes para la sociedad de
 ## Funcionalidades
 La pagina web presenta entre sus principales funcionalidades:
 
-### - Visualizar eventos relacionados a la computacion a traves de una interfaz grafica
+### - Crear eventos relacionados a la computacion
 
 ![alt text](Images/interfaz.PNG "Title")
 
@@ -18,7 +18,7 @@ La pagina web presenta entre sus principales funcionalidades:
 
 ![alt text](Images/perfil.PNG "Title")
 
-### - Interaccion a traves de sesiones de usuario
+### - Interaccion a traves de sesiones
 
 ![alt text](Images/login.PNG "Title")
 
@@ -146,12 +146,12 @@ La estructura y la denominación de los agregados, las clases y los métodos de 
 
 ## Esfuerzo de cada integrante (en orden alfabetico):
 
-- Casaverde Aleman Moises Alejandro: Implementacion de API, llamadas a la misma, rutas, contenido de plantillas en jinja, creacion de varios blueprints e infraestructura
+- Casaverde Aleman Moises Alejandro: Implementacion de API, llamadas a la misma, creacion de varios blueprints e infraestructura
 - Castillon Urquiza Levi Joel:
-- Chambi Ytusaca Samuel Felipe Maximiliano: Implementación de templates, diseño de archivo README.md e infraestructura DDD. 
+- Chambi Ytusaca Samuel Felipe Maximilianao: 
 - Choquehuanca Anconeyra Roy Angel:
-- Pino Huarsaya Angie Alexandra:
-- Sumare Uscca Josue Gabriel:
+- Pino Huarsaya Angie Alexandra:  Implementación de Templates (Sign Up, Inicio)
+- Sumare Uscca Josue Gabriel: Implementacion de la secuencia de acciones de la aplicación(fujo de acciones de todas las pantallas).
 - Villa Herrera Alejandro Antonio: Implementacion de API, diseño de models, diseño Readme, modificacion de blueprints e infraestructura
 - Yauri Ituccayasi Julio Enrique: 
 
