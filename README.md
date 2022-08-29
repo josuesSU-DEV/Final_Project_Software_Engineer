@@ -8,11 +8,19 @@ La pagina web presenta entre sus principales funcionalidades:
 
 ### - Visualizar eventos relacionados a la computacion a traves de una interfaz grafica
 
+![alt text](Images/interfaz.PNG "Title")
+
 ### - Obtener mas informacion de los eventos
+
+![alt text](Images/eventos.PNG "Title")
 
 ### - Acceder a los perfiles de los ponentes
 
+![alt text](Images/perfil.PNG "Title")
+
 ### - Interaccion a traves de sesiones de usuario
+
+![alt text](Images/login.PNG "Title")
 
 ## Estilos de Programacion usados
 
