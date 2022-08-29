@@ -148,7 +148,7 @@ La estructura y la denominación de los agregados, las clases y los métodos de 
 
 - Casaverde Aleman Moises Alejandro: Implementacion de API, llamadas a la misma, rutas, plantillas con formato jinja (pasar datos de la API), creacion de varios blueprints e infraestructura
 - Castillon Urquiza Levi Joel: Implementacion de API , creacion y modificacion de infraestructura.
-- Chambi Ytusaca Samuel Felipe Maximiliano: 
+- Chambi Ytusaca Samuel Felipe Maximiliano: Implementación de templates, diseño de archivo README.md e infraestructura DDD. 
 - Choquehuanca Anconeyra Roy Angel: Creación de la base de datos, tanto modelo lógico, conceptual y fisico. Con procedimientos almacenados y ejemplos en cada tabla.
 - Pino Huarsaya Angie Alexandra:  Implementación de Templates (Sign Up, Inicio)
 - Sumare Uscca Josue Gabriel: Implementacion de la secuencia de acciones de la aplicación(fujo de acciones de todas las pantallas).
