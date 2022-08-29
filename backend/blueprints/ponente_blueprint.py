@@ -13,24 +13,24 @@ repo = PonenteRepository()
 
 @ponente_blueprint.route('/api/ponente/create', methods=['POST']) # Ruta accesible por POST
 @cross_origin()
-def create_asistente():
+def create_ponente():
     content = repo.create(int(request.json['id']), request.json['nombre'], request.json['apellido'], request.json['correo'])    
     return jsonify(content)
 
 @ponente_blueprint.route('/api/ponente/get', methods=['POST']) # Ruta accesible por POST
 @cross_origin()
-def get_asistente():
+def get_ponente():
     content = repo.get(int(request.json['id']))    
     return jsonify(content)
 
 @ponente_blueprint.route('/api/ponente/create', methods=['POST']) # Ruta accesible por POST
 @cross_origin()
-def get_all_asistente():
+def get_all_ponente():
     content = repo.get_all() 
     return jsonify(content)
 
 @ponente_blueprint.route('/api/ponente/create', methods=['POST']) # Ruta accesible por POST
 @cross_origin()
-def delete_asistente():
+def delete_ponente():
     content = repo.delete(int(request.json['id']))    
     return jsonify(content)

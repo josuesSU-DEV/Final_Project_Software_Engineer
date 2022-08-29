@@ -8,6 +8,7 @@ from flask import render_template,url_for
 from flask_cors import CORS, cross_origin # para que no genere errores de CORS al hacer peticiones
 
 from backend.blueprints.evento_blueprint import evento_blueprint
+from backend.blueprints.ponente_blueprint import ponente_blueprint
 
 from backend.models.evento import EventoModel
 
@@ -17,6 +18,7 @@ app.secret_key= "averysecretkey"
 
 
 app.register_blueprint(evento_blueprint)
+app.register_blueprint(ponente_blueprint)
 
 cors = CORS(app)
 
@@ -25,7 +27,7 @@ cors = CORS(app)
 def Index():
     #response = requests.post("http://127.0.0.1:5000/api/evento/get_all").json() # Testing API
     #print(response[0]['detalles'])
-    return render_template('registrar.html')
+    return render_template('home.html')
 
 
 @app.route('/login', methods=['GET','POST'])
@@ -44,7 +46,7 @@ def Evento(id):
     return render_template('evento.html', evento=resp)
 
 @app.route('/profile/<int:id>', methods=['GET'])
-def Profile():
+def Profile(id):
     query = {"id" : id}
     resp = requests.post("http://127.0.0.1:5000/api/ponente/get", json=query).json()
     return render_template('profile.html', ponente=resp)

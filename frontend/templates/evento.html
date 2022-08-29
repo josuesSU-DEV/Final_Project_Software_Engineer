@@ -41,11 +41,10 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
                             <h1>{{ evento.nombre }}</h1>
-                            <h2 class="subheading">{{ evento.ponente.nombre}} {{evento.ponente.apellido}}</h2>
+                            <h2 class="subheading">{{ evento.ponente.nombre }} {{ evento.ponente.apellido }}</h2>
                             <span class="meta">
-                                Inicio: 
-                                <a href="#!">25 de agosto</a>
-                                a las 10:00 horas. 
+                                Ir al perfil del  
+                                <a href="{{ url_for('Profile', id=evento.ponente.id )}}">ponente</a>
                             </span>
                         </div>
                     </div>
