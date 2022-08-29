@@ -153,7 +153,7 @@ La estructura y la denominación de los agregados, las clases y los métodos de 
 - Pino Huarsaya Angie Alexandra:  Implementación de Templates (Sign Up, Inicio)
 - Sumare Uscca Josue Gabriel: Implementacion de la secuencia de acciones de la aplicación(fujo de acciones de todas las pantallas).
 - Villa Herrera Alejandro Antonio: Implementacion de API, diseño de models, diseño Readme, modificacion de blueprints e infraestructura
-- Yauri Ituccayasi Julio Enrique: 
+- Yauri Ituccayasi Julio Enrique: Implementación de templates (Evento, Profile, Home) y diseño de README.md.
 
 
 © Copyright 2022 All rights reserved
