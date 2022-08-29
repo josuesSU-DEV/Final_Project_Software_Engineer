@@ -6,7 +6,7 @@ class PonenteRepository:
 
     def get(self, id):
         params = {'id':id}
-        rv = self.mysql_pool.execute("SELECT * FROM usuario WHERE idUsuario = %(id)s", params)                
+        rv = self.mysql_pool.execute("SELECT * FROM usuario u INNER JOIN ponente p on p.idPonente = u.idUsuario WHERE u.idUsuario = %(id)s", params)                
         data = []
         content = {}
         for result in rv:
@@ -14,11 +14,13 @@ class PonenteRepository:
                 'id': result[0], 
                 'nombre': result[1], 
                 'apellido': result[2], 
-                'correo': result[3]
+                'correo': result[3], 
+                'numEventos': result[5], 
+                'descripcion': result[6]
             }
             data.append(content)
             content = {}
-        return data
+        return data[0]
 
     def get_all(self):
         rv = self.mysql_pool.execute("SELECT * FROM usuario u INNER JOIN ponente p on p.idPonente = u.idUsuario ORDER BY idUsuario")
@@ -30,8 +32,8 @@ class PonenteRepository:
                 'nombre': result[1], 
                 'apellido': result[2], 
                 'correo': result[3], 
-                'numEventos': result[4], 
-                'descripcion': result[5]
+                'numEventos': result[5], 
+                'descripcion': result[6]
             }
             data.append(content)
             content = {}

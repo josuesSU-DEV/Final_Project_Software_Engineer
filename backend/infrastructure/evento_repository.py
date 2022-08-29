@@ -21,7 +21,7 @@ class EventoRepository:
         for result in rv:
             content = {
                 'id': result[0], 
-                'ponente': ponente[0], 
+                'ponente': ponente, 
                 'idLista' : result[2], 
                 'nombre': result[3], 
                 'detalles': result[4], 
@@ -40,7 +40,7 @@ class EventoRepository:
             ponente = repo_ponente.get(result[1])
             content = {
                 'id': result[0], 
-                'ponente': ponente[0], 
+                'ponente': ponente, 
                 'idLista': result[2], 
                 'nombre': result[3], 
                 'detalles': result[4], 

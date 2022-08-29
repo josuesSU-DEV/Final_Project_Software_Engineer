@@ -26,9 +26,8 @@ cors = CORS(app)
 
 @app.route('/', methods=['GET'])
 def Index():
-    #response = requests.post("http://127.0.0.1:5000/api/evento/get_all").json() # Testing API
-    #print(response[0]['detalles'])
-    return render_template('home.html')
+    response = requests.post("http://127.0.0.1:5000/api/evento/get_all").json()
+    return render_template('home.html', eventos=response)
 
 
 @app.route('/login', methods=['GET','POST'])
@@ -44,8 +43,8 @@ def Registro():
 def Evento(id):
     query = {"id" : id}
     resp = requests.post("http://127.0.0.1:5000/api/evento/get", json=query).json()
-    evento = EventoModel(resp['id'], resp['ponente'], resp['id_lista'], resp['nombre'], resp['detalles'], resp['link'])
-    return render_template('evento.html', evento)
+    #evento = EventoModel(resp['id'], resp['ponente'], resp['id_lista'], resp['nombre'], resp['detalles'], resp['link'])
+    return render_template('evento.html', evento=resp)
 
 @app.route('/profile/<int:id>', methods=['GET'])
 def Profile(id):

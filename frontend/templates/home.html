@@ -52,6 +52,21 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
+                    {% for evento in eventos %}
+                    <div class="post-preview">
+                        <a href="{{ url_for('Evento', id=evento.id) }}">
+                            <h2 class="post-title">{{ evento.nombre }}</h2>
+                            <h3 class="post-subtitle">{{ evento.detalles }}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Publicado por 
+                            <a href="#!">{{ evento.ponente.nombre }} {{ evento.ponente.apellido }}</a>
+                            el 7 de Septiembre, 2022
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    {% endfor %}
                     <div class="post-preview">
                         <a href="post.html">
                             <h2 class="post-title">Franci Suni, sobre los avances en computación cuántica.</h2>
