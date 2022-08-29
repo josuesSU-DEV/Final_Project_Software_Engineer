@@ -149,7 +149,7 @@ La estructura y la denominación de los agregados, las clases y los métodos de 
 - Casaverde Aleman Moises Alejandro: Implementacion de API, llamadas a la misma, creacion de varios blueprints e infraestructura
 - Castillon Urquiza Levi Joel:
 - Chambi Ytusaca Samuel Felipe Maximilianao: 
-- Choquehuanca Anconeyra Roy Angel:
+- Choquehuanca Anconeyra Roy Angel: Creación de la base de datos, tanto modelo lógico, conceptual y fisico. Con procedimientos almacenados y ejemplos en cada tabla.
 - Pino Huarsaya Angie Alexandra:  Implementación de Templates (Sign Up, Inicio)
 - Sumare Uscca Josue Gabriel: Implementacion de la secuencia de acciones de la aplicación(fujo de acciones de todas las pantallas).
 - Villa Herrera Alejandro Antonio: Implementacion de API, diseño de models, diseño Readme, modificacion de blueprints e infraestructura
