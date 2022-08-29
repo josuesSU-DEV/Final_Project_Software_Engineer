@@ -6,13 +6,13 @@ Debido a los grandes avances y nuevas tecnologias relevantes para la sociedad de
 ## Funcionalidades
 La pagina web presenta entre sus principales funcionalidades:
 
-### - Crear eventos relacionados a la computacion
+### - Visualizar eventos relacionados a la computacion a traves de una interfaz grafica
 
-### - Establecer intereses a los usuarios para tales eventos
+### - Obtener mas informacion de los eventos
 
-### - Guardar eventos favoritos
+### - Acceder a los perfiles de los ponentes
 
-### - Interaccion a traves de sesiones
+### - Interaccion a traves de sesiones de usuario
 
 ## Estilos de Programacion usados
 
@@ -138,7 +138,7 @@ La estructura y la denominación de los agregados, las clases y los métodos de 
 
 ## Esfuerzo de cada integrante (en orden alfabetico):
 
-- Casaverde Aleman Moises Alejandro: Implementacion de API, llamadas a la misma, creacion de varios blueprints e infraestructura
+- Casaverde Aleman Moises Alejandro: Implementacion de API, llamadas a la misma, rutas, contenido de plantillas en jinja, creacion de varios blueprints e infraestructura
 - Castillon Urquiza Levi Joel:
 - Chambi Ytusaca Samuel Felipe Maximilianao: 
 - Choquehuanca Anconeyra Roy Angel:
