@@ -6,7 +6,7 @@ Debido a los grandes avances y nuevas tecnologias relevantes para la sociedad de
 ## Funcionalidades
 La pagina web presenta entre sus principales funcionalidades:
 
-### - Crear eventos relacionados a la computacion
+### - Visualizar a traves de una interfaz grafica eventos relacionados a la computacion
 
 ![alt text](Images/interfaz.PNG "Title")
 
